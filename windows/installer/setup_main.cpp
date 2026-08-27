@@ -275,7 +275,7 @@ void WriteUninstallEntry(const std::wstring& dir, const std::wstring& uninstalle
     }
 
     SetRegString(key, L"DisplayName", kAppName);
-    SetRegString(key, L"DisplayVersion", L"0.2.2");
+    SetRegString(key, L"DisplayVersion", L"0.2.3");
     SetRegString(key, L"Publisher", L"Taha Ünivar");
     SetRegString(key, L"InstallLocation", dir);
     SetRegString(key, L"DisplayIcon", dir + L"\\xcam-app.exe");
