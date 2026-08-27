@@ -104,6 +104,9 @@ const std::unordered_map<std::string, const char*>& TurkishTable() {
         {"USB only", "Yalnızca USB"},
         {"Wi-Fi only", "Yalnızca Wi-Fi"},
         {"Phone address", "Telefon adresi"},
+        {"Pairing code", "Eşleştirme kodu"},
+        {"Only if the phone asks for one", "Yalnızca telefon isterse"},
+        {"Type an address, Enter to save", "Adres yaz, kaydetmek için Enter"},
         {"Type an address, Enter to save", "Adres yazın, kaydetmek için Enter"},
         {"Recordings folder", "Kayıt klasörü"},
         {"Choose…", "Seç…"},
@@ -117,6 +120,24 @@ const std::unordered_map<std::string, const char*>& TurkishTable() {
         {"every 4th frame", "4 karede bir"},
         {"every 8th frame", "8 karede bir"},
         {"Apply the look to recordings", "Görünümü kayda uygula"},
+
+        // The connection chooser, which is the first thing anybody reads.
+        {"How is your phone connected?", "Telefonun nasıl bağlı?"},
+        {"the cable -- fastest, nothing to set up",
+         "kablo — en hızlısı, ayar gerekmiyor"},
+        {"adb was not found on this machine", "bu makinede adb bulunamadı"},
+        {"no cable -- same network as the phone",
+         "kablosuz — telefonla aynı ağda"},
+        {"On the network", "Ağda"},
+        {"No phone on the network yet. Open XCam on the phone, allow "
+         "Wi-Fi connections, and press start.",
+         "Ağda henüz telefon yok. Telefonda XCam'i aç, Wi-Fi bağlantılarına "
+         "izin ver ve başlata bas."},
+        {"No phone on the network yet -- the saved address will be "
+         "tried anyway.",
+         "Ağda henüz telefon yok — kayıtlı adres yine de denenecek."},
+        {"Type an address", "Adres yaz"},
+        {"Decide for me", "Sen karar ver"},
         {"OFF", "KAPALI"},
         {"Takes on the phone only", "Yalnızca telefona kayıtta"},
         {"Takes begin %ds before you press record", "Çekim, kayda basmandan %d saniye önce başlar"},

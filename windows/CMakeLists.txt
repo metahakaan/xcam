@@ -68,7 +68,8 @@ if(EXISTS ${CMAKE_CURRENT_SOURCE_DIR}/app/main.cpp)
         app/preview_d3d11.cpp
         app/lut.cpp
         app/pro_panel.cpp
-        app/settings_panel.cpp
+        app/connect_panel.cpp
+    app/settings_panel.cpp
         app/takes_panel.cpp
         app/take_sidecar.cpp
         app/strings.cpp

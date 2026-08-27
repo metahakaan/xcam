@@ -20,6 +20,7 @@
 #include "app/lut.h"
 #include "app/preview_d3d11.h"
 #include "app/pro_panel.h"
+#include "app/connect_panel.h"
 #include "app/settings_panel.h"
 #include "app/take_sidecar.h"
 #include "app/takes_panel.h"
@@ -353,6 +354,7 @@ struct AppState {
     ui::Input input;
     ProPanel panel;
     SettingsPanel settingsPanel;
+    ConnectPanel connectPanel;
     TakesPanel takesPanel;
 
     // The renderer and the models are both touched from either thread, so they
@@ -858,6 +860,14 @@ void ApplySettings(AppState& app) {
     app.shared.transport = transport == "usb"  ? Transport::Usb
                 : transport == "wifi" ? Transport::WiFi
                                       : Transport::Auto;
+
+    // Asked once, on a first run, and never again.
+    //
+    // The key's presence is the record of having been asked -- not its value.
+    // A previous answer of "decide for me" stores "auto", which is
+    // indistinguishable from the default if you go by the value, and somebody
+    // who said that once should not be asked every morning.
+    if (s.Has("net.transport")) app.connectPanel.Close();
     app.shared.host = s.GetString("net.host");
     app.shared.pairCode = s.GetString("net.pairCode");
 
@@ -1265,7 +1275,15 @@ void PresentFrame(AppState& app) {
         if (!d2d) return;
 
         const D2D1_SIZE_F size = d2d->GetSize();
-        app.ui.BeginFrame(app.input, size.width, size.height, app.panel.Opacity(now));
+        // The connect card does not fade.
+        //
+        // Everything drawn through UiContext is multiplied by this, and the
+        // panel dims itself to nothing when the pointer has been still -- which
+        // is right for controls floating over a picture and wrong for the one
+        // card standing between somebody and a picture existing at all. It
+        // faded out while they read it.
+        const float opacity = app.connectPanel.IsOpen() ? 1.0f : app.panel.Opacity(now);
+        app.ui.BeginFrame(app.input, size.width, size.height, opacity);
 
         // The prompter, under the panel and over the picture.
         //
@@ -1316,6 +1334,31 @@ void PresentFrame(AppState& app) {
             angle.link.client.SendControl(command);
         }
         if (!takesOut.fetch.empty()) app.fetchPending = takesOut.fetch;
+
+        // Last, which is what makes it topmost.
+        //
+        // A hotspot claims the pointer for whichever widget drew it most
+        // recently, so a card meant to block everything underneath has to be
+        // the final thing drawn -- otherwise a click lands on the card and on
+        // whatever chip happens to sit beneath it.
+        if (app.connectPanel.IsOpen()) {
+            const ConnectPanel::Output connectOut = app.connectPanel.Draw(
+                app.ui, app.shared, app.discovery.Devices(), !app.adbPath.empty());
+            if (connectOut.chose) {
+                app.settings.Set("net.transport",
+                                 app.shared.transport == Transport::Usb  ? "usb"
+                               : app.shared.transport == Transport::WiFi ? "wifi"
+                                                                         : "auto");
+                if (!app.shared.host.empty()) app.settings.Set("net.host", app.shared.host);
+                app.reconnect = true;
+                angle.link.client.Disconnect();
+                XCAM_LOG_INFO("transport chosen: %s",
+                              app.shared.transport == Transport::Usb  ? "USB"
+                            : app.shared.transport == Transport::WiFi ? "Wi-Fi"
+                                                                      : "auto");
+            }
+            if (connectOut.openSettings) app.settingsPanel.Open();
+        }
 
         if (settingsOut.openTakes) app.takesPanel.Open();
         if (settingsOut.autostartChanged) autostart::Set(app.shared.autostart);
@@ -2757,6 +2800,22 @@ LRESULT CALLBACK WindowProc(HWND window, UINT message, WPARAM wparam, LPARAM lpa
         case WM_KEYDOWN: {
             std::lock_guard<std::mutex> guard(app->lock);
             app->panel.NotePointerActivity(NowSeconds());
+
+            // While a field is open, the keyboard belongs to it.
+            //
+            // Every shortcut below is a bare key, and TranslateMessage queues
+            // the WM_CHAR from the message loop whatever this does -- so typing
+            // an address put the dot in the field *and* toggled the takes sheet
+            // over the top of it, and every letter in a preset name fired
+            // whatever it was bound to as well. Editing keeps backspace, Enter
+            // and Escape, which belong to the field; the rest is left to
+            // WM_CHAR alone.
+            const bool typing = app->panel.IsEditing() || app->settingsPanel.IsEditing();
+            if (typing && wparam != VK_BACK && wparam != VK_RETURN &&
+                wparam != VK_ESCAPE) {
+                return 0;
+            }
+
             switch (wparam) {
                 case VK_BACK:   app->input.backspace = true; return 0;
                 case VK_RETURN: app->input.commit = true;    return 0;
