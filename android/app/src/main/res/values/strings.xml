@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">XCam</string>
+
+    <string name="btn_start">Start capture</string>
+    <string name="btn_stop">Stop capture</string>
+    <string name="btn_battery">Allow background running</string>
+    <string name="btn_copy">Copy command</string>
+    <string name="copied">Copied</string>
+
+    <!-- The state, in the one word someone reads from across a desk. -->
+    <string name="state_idle">IDLE</string>
+    <string name="state_waiting">WAITING</string>
+    <string name="state_streaming">STREAMING</string>
+    <string name="state_recording">RECORDING</string>
+    <string name="state_no_camera">NO CAMERA</string>
+    <string name="state_on_air">ON AIR</string>
+
+    <string name="detail_idle">Press start, then connect from the PC.</string>
+    <string name="detail_waiting">Listening. The desktop app will find this phone.</string>
+    <string name="detail_streaming">%1$d × %2$d to the desktop</string>
+    <string name="detail_on_air">%1$d × %2$d — an app has the camera open</string>
+
+    <!-- fps, Mbit/s, sound, battery, thermal: everything the service already
+         measures for its own STATS packet. -->
+    <string name="live_numbers">%1$.0f fps   %2$.0f Mb/s   %3$s   %4$d%%   %5$s</string>
+    <string name="audio_off">no sound</string>
+    <string name="audio_dead">MIC DEAD</string>
+
+    <string name="label_connect">Connect</string>
+    <string name="hint_usb">Over USB the desktop app sets up the tunnel itself.</string>
+    <string name="hint_wifi_cmd">xcam-app --host %1$s</string>
+    <string name="hint_no_wifi">No Wi-Fi address; USB only for now.</string>
+
+    <!-- Wi-Fi is off until somebody says otherwise, and the wording says what
+         switching it on actually does rather than naming a setting. -->
+    <string name="btn_wifi_on">Allow Wi-Fi connections</string>
+    <string name="btn_wifi_off">Wi-Fi connections: on</string>
+    <string name="hint_wifi_off">Only the USB cable can reach this phone. Nothing on the network can see it.</string>
+    <string name="hint_wifi_on">Pairing code %1$s — type it into the desktop app the first time it connects over Wi-Fi.</string>
+    <string name="btn_new_code">New code</string>
+    <string name="code_rotated">New code. Every paired PC has to be told it again.</string>
+
+    <string name="perm_camera">camera</string>
+    <string name="perm_microphone">microphone</string>
+    <string name="perm_missing">Missing permission: %1$s. Tap to grant.</string>
+
+    <string name="status_waiting">Waiting for the desktop app…</string>
+    <string name="status_streaming">Streaming to PC</string>
+</resources>

@@ -1,0 +1,17 @@
+# One line ending in the repository, whatever anybody's editor does locally.
+#
+# Without this, every commit from this machine warns that LF will become CRLF,
+# and a contributor on another platform eventually commits a file with the
+# other ending -- which shows up as a diff touching every line of a file nobody
+# meaningfully changed.
+* text=auto eol=lf
+
+# Windows-only scripts that Windows tooling is happier reading with CRLF.
+*.ps1 text eol=crlf
+*.bat text eol=crlf
+
+# Not text. Normalising these corrupts them.
+*.png binary
+*.jar binary
+*.cube binary
+*.ico binary

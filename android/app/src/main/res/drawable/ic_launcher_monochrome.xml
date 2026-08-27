@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The themed-icon layer for Android 13 and later, where the launcher recolours
+  everything to match the wallpaper.
+
+  The tally arm cannot survive that: a themed icon gets exactly one colour. So
+  the shape carries the identity on its own here, which it can, because the
+  aperture gap in the middle is what separates this from a close button.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024"
+    android:tint="#FFFFFF">
+
+    <group
+        android:pivotX="512"
+        android:pivotY="512"
+        android:scaleX="0.62"
+        android:scaleY="0.62">
+
+        <path
+            android:pathData="M 176 176 L 427.1 427.1"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 176 848 L 427.1 596.9"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 848 848 L 596.9 596.9"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 848 176 L 596.9 427.1"
+            android:strokeColor="#FFFFFF"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

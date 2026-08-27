@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The mark on its own, for the header of the phone screen. Same geometry as
+  brand/xcam-mark.svg; no tile and no safe-zone inset, because nothing is going
+  to mask it here.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="28dp"
+    android:height="28dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+
+    <path
+        android:pathData="M 176 176 L 427.1 427.1"
+        android:strokeColor="#8A949E"
+        android:strokeWidth="146"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M 176 848 L 427.1 596.9"
+        android:strokeColor="#8A949E"
+        android:strokeWidth="146"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M 848 848 L 596.9 596.9"
+        android:strokeColor="#8A949E"
+        android:strokeWidth="146"
+        android:strokeLineCap="round" />
+    <path
+        android:pathData="M 848 176 L 596.9 427.1"
+        android:strokeColor="#FFB020"
+        android:strokeWidth="146"
+        android:strokeLineCap="round" />
+</vector>

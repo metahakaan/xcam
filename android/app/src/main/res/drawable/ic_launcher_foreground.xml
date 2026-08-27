@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The XCam mark, as the foreground layer of the adaptive icon.
+
+  Same geometry as brand/xcam-mark.svg and tools/make-icons.py: bars 146 wide
+  with round caps on a 1024 grid, outer corners at 176 and 848, each arm ending
+  120 from the centre. The upper-right arm is Signal, which is the tally light.
+
+  Scaled to 62% because an adaptive icon's foreground is drawn on a canvas a
+  third larger than what any launcher will show, and everything outside the
+  inner 66% is liable to be masked away.
+-->
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="1024"
+    android:viewportHeight="1024">
+
+    <group
+        android:pivotX="512"
+        android:pivotY="512"
+        android:scaleX="0.62"
+        android:scaleY="0.62">
+
+        <path
+            android:pathData="M 176 176 L 427.1 427.1"
+            android:strokeColor="#F2F5F7"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 176 848 L 427.1 596.9"
+            android:strokeColor="#F2F5F7"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 848 848 L 596.9 596.9"
+            android:strokeColor="#F2F5F7"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+        <path
+            android:pathData="M 848 176 L 596.9 427.1"
+            android:strokeColor="#FFB020"
+            android:strokeWidth="146"
+            android:strokeLineCap="round" />
+    </group>
+</vector>

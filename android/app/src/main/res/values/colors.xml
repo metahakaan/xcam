@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  The palette, named once. docs/BRAND.md says what each one is for; the short
+  version is that Signal marks what is in hand and Record marks what cannot be
+  undone, and neither is ever decorative.
+
+  These are the same values as windows/app/ui/theme.h. Two platforms, one
+  product, one set of numbers.
+-->
+<resources>
+    <color name="ink">#FF0E1114</color>
+    <color name="graphite">#FF171B20</color>
+    <color name="signal">#FFFFB020</color>
+    <color name="record">#FFFF3B30</color>
+    <color name="good">#FF5BD6A0</color>
+    <color name="warn">#FFFF6B5B</color>
+    <color name="text">#FFF2F5F7</color>
+    <color name="text_dim">#FF8A949E</color>
+    <color name="hairline">#14FFFFFF</color>
+</resources>

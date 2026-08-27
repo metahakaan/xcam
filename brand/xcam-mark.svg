@@ -1,0 +1,28 @@
+<!--
+  The XCam mark: an aperture X.
+
+  Four arms on the diagonals, stopping short of the centre so a small opening
+  is left between them -- the shape a diaphragm makes rather than the one a
+  close button makes. The upper-right arm is Signal amber: the tally light, the
+  one place in the whole identity where a colour means "this is live".
+
+  Geometry is fixed here and copied by every other renderer -- tools/make-icons.py
+  for the Windows .ico, and the Android vector drawables -- so all three agree
+  pixel for pixel. On a 1024 grid: bars 146 wide with round caps, outer corners
+  at 176 and 848, each arm ending 120 from the centre.
+
+  Transparent ground on purpose. This is the mark; the app icon is this mark on
+  an Ink tile, which the generator composes.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1024 1024" width="1024" height="1024">
+  <g fill="none" stroke-width="146" stroke-linecap="round">
+    <!-- top left -->
+    <path stroke="#F2F5F7" d="M 176 176 L 427.1 427.1"/>
+    <!-- bottom left -->
+    <path stroke="#F2F5F7" d="M 176 848 L 427.1 596.9"/>
+    <!-- bottom right -->
+    <path stroke="#F2F5F7" d="M 848 848 L 596.9 596.9"/>
+    <!-- top right: the tally -->
+    <path stroke="#FFB020" d="M 848 176 L 596.9 427.1"/>
+  </g>
+</svg>

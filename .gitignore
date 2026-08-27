@@ -1,0 +1,35 @@
+# Android
+android/.gradle/
+android/build/
+android/app/build/
+android/local.properties
+*.apk
+*.ap_
+
+# Windows / CMake
+windows/build/
+windows/out/
+*.obj
+*.pdb
+*.ilk
+*.exp
+*.lib
+*.dll
+
+# Editors
+.idea/
+.vs/
+*.user
+
+# Captures produced by tools/dump_stream.py
+*.h264
+*.hevc
+*.mp4
+
+# Python
+__pycache__/
+*.pyc
+
+# Superseded copies of the filter, left behind when it was in use at link time
+*.old.dll
+wipe-and-publish.ps1

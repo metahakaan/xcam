@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  Turkish. Android picks this by itself on a Turkish phone, which is the right
+  behaviour and the reason there is no language setting on this screen: the
+  phone already knows.
+
+  Camera vocabulary is left in English on purpose. ISO, shutter, LUT and log are
+  the words printed on every camera body sold here, and translating them would
+  make the app harder to read for exactly the people who know what they mean.
+-->
+<resources>
+    <string name="btn_start">Yayını başlat</string>
+    <string name="btn_stop">Yayını durdur</string>
+    <string name="btn_battery">Arka planda çalışmaya izin ver</string>
+    <string name="btn_copy">Komutu kopyala</string>
+    <string name="copied">Kopyalandı</string>
+
+    <string name="state_idle">HAZIR</string>
+    <string name="state_waiting">BEKLİYOR</string>
+    <string name="state_streaming">YAYINDA</string>
+    <string name="state_recording">KAYITTA</string>
+    <string name="state_no_camera">KAMERA YOK</string>
+    <string name="state_on_air">YAYINDA</string>
+
+    <string name="detail_idle">Başlata basın, sonra PC\'den bağlanın.</string>
+    <string name="detail_waiting">Dinliyor. Masaüstü uygulaması bu telefonu bulacak.</string>
+    <string name="detail_streaming">%1$d × %2$d masaüstüne gidiyor</string>
+    <string name="detail_on_air">%1$d × %2$d — bir uygulama kamerayı açtı</string>
+
+    <string name="live_numbers">%1$.0f fps   %2$.0f Mb/s   %3$s   %%%4$d   %5$s</string>
+    <string name="audio_off">ses yok</string>
+    <string name="audio_dead">MİKROFON ÖLÜ</string>
+
+    <string name="label_connect">Bağlantı</string>
+    <string name="hint_usb">USB\'de tüneli masaüstü uygulaması kendisi kuruyor.</string>
+    <string name="hint_wifi_cmd">xcam-app --host %1$s</string>
+    <string name="hint_no_wifi">Wi-Fi adresi yok; şimdilik yalnızca USB.</string>
+
+    <string name="perm_camera">kamera</string>
+    <string name="perm_microphone">mikrofon</string>
+    <string name="perm_missing">Eksik izin: %1$s. Vermek için dokunun.</string>
+
+    <string name="status_waiting">Masaüstü uygulaması bekleniyor…</string>
+    <string name="status_streaming">PC\'ye yayında</string>
+
+    <string name="btn_wifi_on">Wi-Fi bağlantılarına izin ver</string>
+    <string name="btn_wifi_off">Wi-Fi bağlantıları: açık</string>
+    <string name="hint_wifi_off">Bu telefona yalnızca USB kablosu ulaşabilir. Ağdaki hiçbir şey onu göremez.</string>
+    <string name="hint_wifi_on">Eşleştirme kodu %1$s — Wi-Fi üzerinden ilk bağlanışta masaüstü uygulamasına yaz.</string>
+    <string name="btn_new_code">Yeni kod</string>
+    <string name="code_rotated">Yeni kod. Eşleşmiş her bilgisayara yeniden söylenmeli.</string>
+</resources>
