@@ -34,15 +34,13 @@ verdiğini kaydet, kablonun taşıyabildiğini değil.
 
 ### Install
 
-1. Download the latest **[Release](../../releases)** — `XCam-Setup.zip` and
+1. Download the latest **[Release](../../releases)** — `XCam-Setup.exe` and
    `xcam.apk`.
-2. On the PC, unzip and run:
+2. On the PC, run `XCam-Setup.exe` and press **Install**.
 
-   ```powershell
-   .\install.ps1
-   ```
-
-   No administrator needed. The camera registers for your account only.
+   No administrator needed — the camera registers for your account only. You
+   can update over a running browser; the installer moves the old filter aside
+   rather than asking you to close Chrome.
 
 3. Install the APK on the phone and open it:
 
@@ -53,7 +51,8 @@ verdiğini kaydet, kablonun taşıyabildiğini değil.
 4. Plug the phone in, allow USB debugging, press **Start capture** on the phone,
    then start **XCam** on the PC.
 
-To remove it: `.\install.ps1 -Uninstall`. Your settings and recordings stay.
+To remove it: **Settings → Apps → XCam → Uninstall**, the same as anything else.
+Your settings and recordings stay.
 
 ### Over Wi-Fi
 
@@ -104,15 +103,13 @@ for the Android side.
 
 ### Kurulum
 
-1. Son **[Release](../../releases)** dosyalarını indir — `XCam-Setup.zip` ve
+1. Son **[Release](../../releases)** dosyalarını indir — `XCam-Setup.exe` ve
    `xcam.apk`.
-2. Bilgisayarda zip'i aç ve çalıştır:
+2. Bilgisayarda `XCam-Setup.exe`'yi çalıştır ve **Install**'a bas.
 
-   ```powershell
-   .\install.ps1
-   ```
-
-   Yönetici gerekmiyor. Kamera yalnızca senin hesabına kurulur.
+   Yönetici gerekmiyor — kamera yalnızca senin hesabına kurulur. Tarayıcı açıkken
+   de güncelleyebilirsin; kurulum programı eski filtreyi kenara alıyor, senden
+   Chrome'u kapatmanı istemiyor.
 
 3. APK'yı telefona kur ve aç:
 
@@ -137,7 +134,8 @@ bilmeden bağlanan hiçbir şeye tek kelime söylenmez, bağlantısı kapatılı
 Güvenmediğin bir ağda Wi-Fi'ı kapalı bırak. Telefondaki **Yeni kod**, eşleşmiş
 bütün bilgisayarların eşleşmesini bozar.
 
-Kaldırmak için: `.\install.ps1 -Uninstall`. Ayarların ve kayıtların kalır.
+Kaldırmak için: **Ayarlar → Uygulamalar → XCam → Kaldır**, her şey gibi.
+Ayarların ve kayıtların kalır.
 
 ### Kaynaktan derleme
 
